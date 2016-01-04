@@ -12,14 +12,33 @@
 
 + (UIImage *)blankImage;
 + (UIImage *)imageOfColor:(UIColor *)color;
++ (UIImage*) grayishImage: (UIImage*) inputImage;
 - (UIImage *)tintedGradientImageWithColor:(UIColor *)tintColor;
 - (UIImage *)tintedImageWithColor:(UIColor *)tintColor;
 - (UIImage *)imageScaledToSize:(CGSize)size;
 - (UIImage *)imageSmoothlyScaledToSize:(CGSize)size;
 + (UIImage *)imageFromLayer:(CALayer *)layer;
-+ (UIImage *)paddedImage:(UIImage *)image paddingInsets:(UIEdgeInsets)insets;
 + (UIImage *)stitchImages:(NSArray *)images vertically:(BOOL)vertically;
 - (UIImage *)colorizeImageWithColor:(UIColor *)color;
 - (UIImage *)colorizeImageWithColor:(UIColor *)color withBlendMode:(CGBlendMode)blendMode;
++ (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage ;
+
+
+
+
+
+- (UIImage *)croppedImage:(CGRect)bounds;
+- (UIImage *)thumbnailImage:(NSInteger)thumbnailSize
+          transparentBorder:(NSUInteger)borderSize
+               cornerRadius:(NSUInteger)cornerRadius
+       interpolationQuality:(CGInterpolationQuality)quality;
+- (UIImage *)resizedImage:(CGSize)newSize
+     interpolationQuality:(CGInterpolationQuality)quality;
+- (UIImage *)resizedImageWithContentMode:(UIViewContentMode)contentMode
+                                  bounds:(CGSize)bounds
+                    interpolationQuality:(CGInterpolationQuality)quality;
+- (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize;
+
+
 
 @end
